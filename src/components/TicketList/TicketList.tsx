@@ -4,7 +4,7 @@ import { Button, ListGroup, Modal } from 'react-bootstrap';
 import { ITicket } from '../../types/ticket';
 import TicketItem from '../TicketItem/TicketItem'
 import TicketForm from '../TicketForm/TicketForm';
-import { putTicket } from '../../graph-ql/ticket/ticket';
+import { putTicket, deleteTicket } from '../../graph-ql/ticket/ticket';
 
 export interface TicketListProps {
     tickets: ITicket[],
@@ -15,7 +15,7 @@ export interface TicketListProps {
 const TicketList = (props: TicketListProps) => {
     const [show, setShow] = useState(false);
     const { tickets, organisationId, boardId } = props;
-    const ticketComps = tickets.map(ticket => <ListGroup.Item key={ticket.id}><TicketItem ticket={ticket}/></ListGroup.Item>)
+    const ticketComps = tickets.map(ticket => <ListGroup.Item key={ticket.id}><TicketItem deleteTicket={removeTicket(organisationId)} ticket={ticket}/></ListGroup.Item>)
     const closeModal = () => setShow(false);
     const showModal = () => setShow(true);
 
@@ -37,6 +37,11 @@ const createTicket = (organisationId: string, boardId: string, closeModal: Funct
     // TODO - update apollo cache
     await putTicket(organisationId, newTicket, boardId, ticketId)
     closeModal()
+}
+
+const removeTicket = (organisationId: string) => async (ticketId: string) => {
+    await deleteTicket(organisationId, ticketId)
+    // TODO - update apollo cache
 }
 
 

@@ -15,5 +15,20 @@ export const putTicket = async (organisationId: string, input: Partial<ITicket>,
       }
     `
     const { data } = await gqlClient.mutate({ mutation, variables: { organisationId, input, boardId, ticketId }})
-    return data.putBoard as ITicket
+    return data.putTicket as ITicket
   }
+
+  export const deleteTicket = async (organisationId: string, ticketId: string): Promise<Partial<ITicket>> => {
+    const mutation = gql`
+    mutation deleteTicket($organisationId: ID!, $ticketId: ID!) {
+        deleteTicket(organisationId: $organisationId, ticketId: $ticketId) {
+          id
+          name
+        }
+      }
+    `
+    const { data } = await gqlClient.mutate({ mutation, variables: { organisationId, ticketId }})
+    return data.deleteTicket as Partial<ITicket>
+  }
+
+  
