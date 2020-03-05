@@ -1,0 +1,26 @@
+TODO - create a new board
+organisation id = string
+boardId = string
+input = { name: string }
+
+
+TODO - create/update ticket
+organisationId: string
+boardId: string
+ticketId: string
+input: { name: string, description: string, visible: boolean, status: DONE | INPROGRESS | TODO }
+
+TODO - delete ticket
+organisationId: string
+ticketId: string
+
+TODO - get typing
+const { fetchTypeDefs } = require('apollo-mocked-provider');
+
+(() => {
+  fetchTypeDefs({
+    uri: 'https://w6tcrg3sb4.execute-api.us-east-1.amazonaws.com/example-example-graphql-api'
+    typescript: false,
+    path: 'src/test-utils/typeDefs.js',
+  });
+})();
