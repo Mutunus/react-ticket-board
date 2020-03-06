@@ -10,8 +10,6 @@ export interface BoardFormProps {
 const BoardForm = (props: BoardFormProps) => {
     const { onClose, onSubmit } = props;
     const [formVals, setFormState] = useState({name: null})
-    // const closeModal = () => setShow(false);
-    // const showModal = () => setShow(true);
     
     return (
         <Modal show={true}>

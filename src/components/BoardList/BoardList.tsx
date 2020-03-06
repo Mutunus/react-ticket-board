@@ -38,11 +38,4 @@ const addBoard = (organisationId: string, closeModal: Function) => async (newBoa
     closeModal();
 }
 
-// const addBoard = (boards: IBoard[], setBoards: React.Dispatch<React.SetStateAction<IBoard[]>>) => (newBoard: IBoard) => {
-//     // TODO - make API call
-//     setBoards([...boards, newBoard])
-//   }
-
-//const addTicketToBoard = (ticketDispatch: Function) => (newTicket: any) => ticketDispatch({ type: TicketActions.ADD, payload: {...newTicket, id: '3333' }})
-
 export default BoardList;
