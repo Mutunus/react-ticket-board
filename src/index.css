@@ -24,8 +24,9 @@ ul {
   cursor: pointer;
 }
 
-.Input {
+input {
   padding: 5px !important;
+  box-sizing: border-box;
 }
 
 a {
@@ -39,4 +40,15 @@ p {
 
 h3, h5 {
   margin-bottom: 0 !important;
+}
+
+label {
+  margin-bottom: 0 !important;
+  width: 25%;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+form div {
+  padding: 5px 0
 }
