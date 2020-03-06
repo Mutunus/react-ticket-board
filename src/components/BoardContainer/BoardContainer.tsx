@@ -23,7 +23,7 @@ const BoardContainer = (props: BoardContainerProps) => {
             setBoard(board)
         }
         request()
-    }, [boardId])
+    }, [boardId, organisationId])
 
     return (
         <div>

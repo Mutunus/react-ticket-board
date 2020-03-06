@@ -1,6 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
 import './BoardForm.css'
-import { IBoard } from '../../types/board';
 import { Modal, Button } from 'react-bootstrap';
 
 export interface BoardFormProps {

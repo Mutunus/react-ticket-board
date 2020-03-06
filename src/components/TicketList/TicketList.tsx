@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { titleContainer } from '../../styles/layout';
-import { Button, ListGroup, Modal } from 'react-bootstrap';
+import { Button, ListGroup } from 'react-bootstrap';
 import { ITicket } from '../../types/ticket';
 import TicketItem from '../TicketItem/TicketItem'
 import TicketForm from '../TicketForm/TicketForm';

@@ -13,6 +13,8 @@ const TicketForm = (props: TicketModalProps) => {
     const formInitState = ticket || getDefaultFormValues()
     const [formInvalid, setFormInvalidState] = useState(false)
     const [formVals, setFormVals] = useState(formInitState);
+
+    // TODO - add status dropdown if ticket prop is provided
         
     return (
         <Modal show={true}>
