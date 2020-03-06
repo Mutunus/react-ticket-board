@@ -15,7 +15,7 @@ export interface TicketListProps {
 const TicketList = (props: TicketListProps) => {
     const [show, setShow] = useState(false);
     const { tickets, organisationId, boardId } = props;
-    const ticketComps = tickets.map(ticket => <ListGroup.Item key={ticket.id}><TicketItem deleteTicket={removeTicket(organisationId)} ticket={ticket}/></ListGroup.Item>)
+    const ticketComps = tickets.map(ticket => <ListGroup.Item key={ticket.id}><TicketItem deleteTicket={removeTicket(organisationId)} ticket={ticket} boardId={boardId}/></ListGroup.Item>)
     const closeModal = () => setShow(false);
     const showModal = () => setShow(true);
 

@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import OrganisationContainer from './components/OrganisationContainer/OrganisationContainer';
 import BoardContainer from './components/BoardContainer/BoardContainer';
+import Ticket from './components/Ticket/Ticket';
 
 export enum TicketActions {
   DELETE = 'delete',
@@ -35,6 +36,7 @@ function App() {
       <Switch>
         <Route exact path='/' render={(props) => <OrganisationContainer {...props} organisationId={`806fb7b1-64fb-4ec1-853b-f4ac7554cc64`} />} />
         <Route exact path='/board/:boardId' render={(props) => <BoardContainer {...props} organisationId={`806fb7b1-64fb-4ec1-853b-f4ac7554cc64`} />} />
+        <Route exact path='/board/:boardId/ticket/:ticketId' render={(props) => <Ticket {...props} organisationId={`806fb7b1-64fb-4ec1-853b-f4ac7554cc64`} />} />        
       </Switch>
     </main>
   );

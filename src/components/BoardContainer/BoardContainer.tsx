@@ -20,7 +20,6 @@ const BoardContainer = (props: BoardContainerProps) => {
     useEffect(() => {
         const request = async () => {
             const board = await getBoard(organisationId, boardId)
-            console.log(board)
             setBoard(board)
         }
         request()
